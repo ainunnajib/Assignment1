@@ -1,4 +1,5 @@
 library(shiny)
+library(datasets)
 data(mtcars)
 
 shinyServer(function(input, output)
