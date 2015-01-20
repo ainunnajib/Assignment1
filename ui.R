@@ -6,11 +6,14 @@ shinyUI(fluidPage(title = "Histogram of cars",
         sidebarLayout(
           sidebarPanel(
             h1("Inputs here:"),
+            h4("Specify how many breaks for the histogram:"),
+            numericInput("breaks", "Number of breaks:", 7),
             h4("Choose which variable for the histogram."),
             h4("Select the variable by clicking the radio button options:"),
             radioButtons("plottype", "Histogram by:",
-                               c("Cylinder" = "cyl",
+                               c(
                                  "Miles per gallon" = "mpg",
+                                 "Cylinder" = "cyl",
                                  "Horsepower" = "hp",
                                  "Weight" = "wt",
                                  "Gear" = "gear"
