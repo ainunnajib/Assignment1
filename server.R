@@ -7,9 +7,11 @@ shinyServer(function(input, output)
   output$histogram <- renderPlot({
     hist(mtcars[, input$plottype], main = "", xlab = "")
   })
-  output$summary <- renderText({
-    summ <- summary(mtcars[which(!is.na(mtcars[,input$plottype])), input$plottype])
+  output$mean <- renderText({
+    mean(mtcars[which(!is.na(mtcars[,input$plottype])), input$plottype])
     })
-  output$header <- renderText({names(summ)})
+  output$median <- renderText({
+    median(mtcars[which(!is.na(mtcars[,input$plottype])), input$plottype])
+  })
 }
   )

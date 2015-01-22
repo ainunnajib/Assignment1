@@ -22,9 +22,9 @@ shinyUI(fluidPage(title = "Histogram of cars",
           mainPanel(
             h3("Histogram by your selected variable will be displayed below:"),
             plotOutput("histogram"),
-            h4("Summary values:"),
-            textOutput("header"),
-            textOutput("summary")
+            h3("Mean and Median of your selected variable will be displayed below:"),
+            h4("Mean:", textOutput("mean")),
+            h4("Median:", textOutput("median"))
           )
         )
 )
