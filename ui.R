@@ -6,8 +6,8 @@ shinyUI(fluidPage(title = "Histogram of cars",
         sidebarLayout(
           sidebarPanel(
             h1("Inputs here:"),
-            h4("Specify how many breaks for the histogram:"),
-            numericInput("breaks", "Number of breaks:", 7),
+            #h4("Specify how many breaks for the histogram:"),
+            #numericInput("breaks", "Number of breaks:", 7),
             h4("Choose which variable for the histogram."),
             h4("Select the variable by clicking the radio button options:"),
             radioButtons("plottype", "Histogram by:",
@@ -17,12 +17,15 @@ shinyUI(fluidPage(title = "Histogram of cars",
                                  "Horsepower" = "hp",
                                  "Weight" = "wt",
                                  "Gear" = "gear"
-                                 ))            
+                                 ))
           ),
           mainPanel(
             h3("Histogram by your selected variable will be displayed below:"),
-            plotOutput("histogram")
-            )
+            plotOutput("histogram"),
+            h4("Summary values:"),
+            textOutput("header"),
+            textOutput("summary")
+          )
         )
 )
 )
